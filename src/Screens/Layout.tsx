@@ -20,4 +20,7 @@ const WrapperApp = styled('div')({
 
 const Main = styled('div')({
   flex: '1',
+  // backgroundColor : 'red',
+  maxHeight : '100%',
+  overflow: 'auto'
 })
