@@ -1,27 +1,20 @@
-import { getProducts } from "../../api/products";
+import ACTION from "../../api/products";
 import { GET_PRODUCTS, ERROR_GET_PRODUCTS } from "../reducer/products";
 
 export const actProducts = () => {
-  return async (dispacth: any, getState: any) => {
-
-      await getProducts().then((res : any) => {
-          if (res.status !== 200) {
-              alert('error')
-              dispacth({
-                  type: ERROR_GET_PRODUCTS,
-              })
-          } else {
-              dispacth({
-                  type: GET_PRODUCTS,
-                  payload: res.data.items
-              })
-          }
-      }).catch((er : any) => {
-          alert(er)
-          dispacth({
-              type: ERROR_GET_PRODUCTS,
-          })
+  return async (dispacth: any, getState: any) => new Promise((resolve : any, reject : any) => 
+    ACTION.getProducts()
+    .then((res : any) => {
+      dispacth({
+        type : GET_PRODUCTS,
+        payload : res.data.items
       })
-
-  }
+      resolve()
+    }).catch((err : any) => {
+      dispacth({
+        type : ERROR_GET_PRODUCTS,
+      })
+      reject(err)
+    })
+  )
 }

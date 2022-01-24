@@ -20,7 +20,7 @@ export default function Beranda() {
   return (
     <>
       <AppCarousel />
-        <Box sx={{ height: '66vh', overflow: 'auto', marginTop: '20px' }}>
+        <Box sx={{ height: '64vh', overflow: 'auto', marginTop: '20px' }}>
           <Container maxWidth='xl' sx={{marginBottom : '20px'}}>
             <Grid container spacing={2}>
               {stateProducts.data?.map((res: any, id: number) => {

@@ -1,5 +1,11 @@
 import axios from 'axios';
+import { type } from 'os';
+import AXIOSBASE from './config';
 
-export function getProducts() {
-  return axios.get(`https://staging-cuan.awalmula.co/rest/default/V1/products?searchCriteria[pageSize]=10`)
+let ACTION: any = {}
+
+ACTION.getProducts = function() {
+  return AXIOSBASE.GETPRODUCTS.get(`/products?searchCriteria[pageSize]=10`)
 }
+
+export default ACTION
