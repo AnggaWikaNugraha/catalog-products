@@ -17,6 +17,10 @@ export default function Beranda() {
 
   useEffect(() => {
     dispatch(actProducts())
+  }, [])
+
+  useEffect(() => {
+    dispatch(actProducts())
   }, [stateProducts.sizePage])
 
   // how to invinite scrool

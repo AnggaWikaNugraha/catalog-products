@@ -9,11 +9,13 @@ import thunk from "redux-thunk";
 // const composerEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 import stateProducts from './reducer/products'
 import loading from './reducer/loading'
+import stateCategories from './reducer/category'
 
 // (4) gabung reducer, untuk sementara kosong, karena kita belum membuat reducer
 const rootReducers = combineReducers({
   stateProducts,
-  loading
+  loading,
+  stateCategories
 });
 
 // (5) buat store, dan gunakan composerEnhancer + middleware thunk
