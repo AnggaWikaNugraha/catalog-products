@@ -4,8 +4,8 @@ import AXIOSBASE from './config';
 
 let ACTION: any = {}
 
-ACTION.getProducts = function() {
-  return AXIOSBASE.GETPRODUCTS.get(`/products?searchCriteria[pageSize]=10`)
+ACTION.getProducts = function(sizePage : number) {
+  return AXIOSBASE.GETPRODUCTS.get(`/products?searchCriteria[pageSize]=${sizePage}`)
 }
 
 export default ACTION

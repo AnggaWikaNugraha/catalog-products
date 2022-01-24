@@ -1,5 +1,6 @@
 export const GET_PRODUCTS = 'get_products';
 export const ERROR_GET_PRODUCTS = 'error_get_products';
+export const SET_PAGE_SIZE = 'set_page_size';
 
 type IAction = {
   type: string,
@@ -7,7 +8,8 @@ type IAction = {
 }
 
 const initialState: any = {
-  data: []
+  data: [],
+  sizePage : 8
 };
 
 export default function reducerProducts(state = initialState, action: IAction) {
@@ -18,6 +20,12 @@ export default function reducerProducts(state = initialState, action: IAction) {
 
     case ERROR_GET_PRODUCTS:
       return { ...state, data: [] };
+
+    case SET_PAGE_SIZE:
+      return { 
+        ...state, 
+        sizePage : state.sizePage + 8
+      };
 
     default:
       return state;

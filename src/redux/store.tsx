@@ -8,10 +8,12 @@ import thunk from "redux-thunk";
 // (3) buat composer enhancer untuk menghubungkan dengan Chrome DevTools Redux
 // const composerEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 import stateProducts from './reducer/products'
+import loading from './reducer/loading'
 
 // (4) gabung reducer, untuk sementara kosong, karena kita belum membuat reducer
 const rootReducers = combineReducers({
   stateProducts,
+  loading
 });
 
 // (5) buat store, dan gunakan composerEnhancer + middleware thunk
